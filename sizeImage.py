@@ -1,12 +1,14 @@
 #necessario a instalacao dessa biblioteca via pip
 from PIL import Image
 import sys
-
 img = sys.argv[1]
+directoryOriginal = sys.argv[2]
+directorySave = sys.argv[3]
 # Queremos gerar uma imagem com as seguintes dimensoes
-x = 70
+x = 300
 y = 460
-img2 = '/home/jessica/Documentos/Documentos/Racks/'+img
-readImg = Image.open(img2)
+saveDir = directorySave+'/'+img
+imgOriginal = directoryOriginal+'/'+img
+readImg = Image.open(imgOriginal)
 readImg = readImg.resize((x, y), Image.ANTIALIAS)
-readImg.save('/home/jessica/Documentos/novas_imagens/'+img)
+readImg.save(saveDir)
